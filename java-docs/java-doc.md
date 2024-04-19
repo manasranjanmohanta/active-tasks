@@ -26,7 +26,7 @@
 - Not necessary
 	- In a class that implements an interface assuming the interface has proper Java-Doc and that Java-Doc also describes the class.
 
-# Format?
+# Format : 
 - HTML : `<p>, <a href>, <code>, <ul>, <li>`
 - Several special tags.
 - First sentence should be a summary of the method/class. Distinguish the method from other methods.
@@ -41,7 +41,7 @@
 ```
 
 
-# Tags
+# Tags : 
 | Tag Name  | Purpose  | Location | Description | Parameter|
 | --- | --- | --- | --- | --- |
 | @author | Who wrote it or author name| Classes and interfaces |  Describes an author  | author-name |
