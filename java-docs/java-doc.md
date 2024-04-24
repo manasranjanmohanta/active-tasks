@@ -1,5 +1,5 @@
 # What is Java-Doc?
-- Documentation generator form Sun Microsystem.
+- Documentation generator from Sun Microsystem.
 - Generates API documentation in HTML format from Java source code.
 - The "doc comments" format is industry standard.
 - The HTML format is used for adding the convenience of being able to hyperlink related document together.
