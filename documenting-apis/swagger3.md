@@ -1,7 +1,7 @@
 # Documenting  APIs
 ### What is Swagger and Open API Specification
 
-**OpenAPI Specification (formerly Swagger Specification)** is an API description format for REST APIs. An OpenAPI file allows you to describe your entire API.  
+- **OpenAPI Specification (formerly Swagger Specification)** is an API description format for REST APIs. An OpenAPI file allows you to describe your entire API.  
 
 <p align="center">
   <img src="https://github.com/manasranjanmohanta/md-related-docs/blob/main/openapi-swagger.jpg" />
@@ -11,7 +11,7 @@
 - In Simple words Swagger makes documenting your RESTful services easy and Spring Boot makes RESTFUL implementations easy.  
 - Swagger provides a user interface OR API Documentation in UI format to access our RESTful web services via the web browser
 
-Swagger is an open-source project used to describe and document RESTful APIs. It dynamically generate documentation from a Swagger-compliant API. Swagger UI allows API developers or consumers to interact with the API’s resources without having any of the implementation logic in place.
+- Swagger is an open-source project used to describe and document RESTful APIs. It dynamically generate documentation from a Swagger-compliant API. Swagger UI allows API developers or consumers to interact with the API’s resources without having any of the implementation logic in place.
 
 ## How to integrate Swagger Open API 3 in your SpringBoot 3 projects?
 
