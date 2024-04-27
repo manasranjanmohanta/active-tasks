@@ -40,9 +40,16 @@
   <img src="https://github.com/manasranjanmohanta/md-related-docs/blob/main/swagger-api-docs-example.png" />
 </p>
 
-- You can also customise the above url by mentioning in the `application.properties` or `.yaml` file :
+- You can also define a custom path for your documentation in the `application.properties` or `.yaml` file :
 
 ```properties
 springdoc.swagger-ui.path=/my-swagger-ui  
 springdoc.api-docs.path=/api-docs
 ```
+
+- If suppose you want to change the title and other properties for swagger. ypu can do it by adding the following line in your main application :
+  
+```java
+@OpenAPIDefinition(info = @Info(title = "Timesheet|Manager API", version = "1.0", description = "Manager role Information"))
+```
+
