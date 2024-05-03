@@ -1,5 +1,50 @@
 # Swagger UI Customization Annotations
 
+## @OpenAPIDefinition in `OpenApiConfig` configuration class
+```java
+@OpenAPIDefinition(
+        info = @Info(
+                contact = @Contact(
+                        name = "Manas",
+                        email = "manasranjanmohanta357@gmail.com",
+                        url = "my-website.com"
+                ),
+                description = "These are the APIs to manage employee-management-application.",
+                title = "Employee Management Application",
+                version = "1.0",
+                license = @License(
+                        name = "License name",// for example mit license or apache license
+                        url = "license-url"
+                ),
+                termsOfService = "Terms of service"
+        ),
+        servers = {
+                @Server(
+                        description = "Local ENV",
+                        url = "http://localhost:8080"
+                ),
+                @Server(
+                        description = "Prod ENV",
+                        url = "product-url"
+                )
+        },
+        security = {
+                @SecurityRequirement(
+                        name = "bearerAuth"
+                )
+        }
+)
+@SecurityScheme(
+        name = "bearerAuth",
+        description = "JWT Auth description",
+        scheme = "bearer",
+        type = SecuritySchemeType.HTTP,
+        bearerFormat = "JWT",
+        in = SecuritySchemeIn.HEADER
+)
+public class OpenApiConfig {
+}
+```
 ## Controller Name
 
 - To change the controller name, use the `@Tag` annotation on the controller class:
@@ -158,5 +203,5 @@ public class Employee {
 
 ## References
 
-1. [https://springdoc.org/](https://springdoc.org/)
+1. Springdoc Documentation - [https://springdoc.org/](https://springdoc.org/)
 2. Swagger Annotations - [https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Getting-started](https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Getting-started)
