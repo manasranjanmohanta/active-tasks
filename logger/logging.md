@@ -37,7 +37,7 @@ TRACE > DEBUG > INFO > WARN > ERROR
 ## How to use in your project?
 **Step - 1:** Create instance where you  want to use log.
 ```java
-private final Logger logger = LogerFactory.getLogger(CurrentClassName.class)
+private final Logger logger = LoggerFactory.getLogger(CurrentClassName.class)
 ```
 - Here "CurrentClassName" is the class name where you want to use Logger.
 
