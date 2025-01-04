@@ -62,8 +62,8 @@ For example, to set the `locations` property to a different directory and the�
 
 ```properties
 spring.flyway.enabled=true
-flyway.locations=db/migrations  
-flyway.schemas=hotel_db
+spring.flyway.locations=db/migrations  
+spring.flyway.schemas=hotel_db
 ```
 
 
