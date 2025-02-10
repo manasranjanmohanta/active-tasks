@@ -4,12 +4,16 @@ Flyway is a database migration tool that helps you manage and apply database cha
 
 ## Step 1: Add Flyway Dependencies to the POM
 
-First, let’s add the Flyway dependencies to our POM file. Open the `pom.xml` file and add the following dependencies:
+First, let’s add the Flyway dependencies to our POM file. Open the `pom.xml` file and add the following dependencies:(You can add second dependency for your respective database)
 
 ```xml
-<dependency>  
-    <groupId>org.flywaydb</groupId>  
-    <artifactId>flyway-core</artifactId>  
+<dependency>
+    <groupId>org.flywaydb</groupId>
+    <artifactId>flyway-core</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.flywaydb</groupId>
+    <artifactId>flyway-mysql</artifactId>
 </dependency>
 ```
 
