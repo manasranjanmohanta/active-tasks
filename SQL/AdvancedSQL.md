@@ -271,3 +271,63 @@
 				FROM employees;
 			```
 			- **Explanation:** Calculates department-level metrics alongside every individual employee row without collapsing the rows like a `GROUP BY` would.
+3. #### Recursive SQL Query
+	- A recursive CTE (Common Table Expression) is a temporary named result set in SQL thata references itself to repeatedly execute a query until a specific condition is met.
+ 	```sql
+	WITH [RECURSIVE] CTE_name AS
+		(
+		SELECT query (Non Recursive query or the Base query)
+		UNION [ALL]
+		SELECT query (Recursive query using CTE_name [with a termination condition])
+		)
+	SELECT * FROM CTE_name;
+ 	```
+	 - Example:
+ 	```sql
+	-- Queries:
+	-- Q1: Display number from 1 to 10 without using any in built functions.
+		with recursive numbers as
+		(
+		select 1 as n
+		union
+		select n + 1
+		from numbers where n < 10
+		)
+		select * from numbers;
+	-- Q2: Find the hierarchy of employees under a given manager.
+		-- mySQL
+		with recursive emp_hierarchy as
+			(
+			select id, name, manager_id, designation, 1 as lvl
+			from emp_details where name='Asha'
+			union all
+			select E.id, E.name, E.manager_id, E.designation, H.lvl + 1 as lvl
+			from emp_hierarchy H
+			join emp_details E on H.id = E.manager_id
+			)
+		select * from emp_hierarchy;
+		-- Oracle
+		with emp_hierarchy(id, name, manager_id, designation, lvl) as
+			(
+			select id, name, manager_id, designation, 1 as lvl
+			from emp_details where name='Asha'
+			union all
+			select E.id, E.name, E.manager_id, E.designation, H.lvl + 1 as lvl
+			from emp_hierarchy H
+			join emp_details E on H.id = E.manager_id
+			)
+		select H2.id as emp_id, H2.name as emp_name, E2.name as manager_name, H2.lvl AS level
+		from emp_hierarchy H2
+		join emp_details E2 on H2.manager_id = E2.id;
+	-- Q3: Find the hierarchy of managers for a given employee.
+		with recursive manager_hierarchy as
+			(
+			select id, name, manager_id, designation, 1 as lvl
+			from emp_details where name = 'David'
+			union all
+			select E.id, E.name, E.manager_id, E.designation, H.lvl + 1 as lvl
+			from manager_hierarchy H
+			join emp_details E on H.manager_id = E.id
+			)
+		select * from manager_hierarchy;
+ 	```
